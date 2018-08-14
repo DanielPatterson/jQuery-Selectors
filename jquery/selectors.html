@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+    
+    <title>jQuery - Selectors</title>
+    
+    <link href="../dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../dist/js/ie10-viewport-bug-workaround.js" rel="stylesheet">
+    <link href="../dist/css/prettify-min.css" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+</head>
+
+<body>
+<div class="container">
+	<div class="row">
+    	<div class="col-lg-12">
+            <h1 class="page-header">Selectors</h1>
+        </div>
+    </div>
+    
+    <div class="row">
+    	<div class="col-lg-12">
+            <h3>Overview</h3>
+            <p>Selectors allow you to select and manipulate HTML element(s).</p>
+            
+            <table class="table table-bordered table-striped">
+            	<tr>
+                	<th>Syntax</th>
+                    <th>Description</th>
+                </tr>
+                
+                <tr>
+                	<td>$("*")</td>
+                    <td>Selects all elements</td>
+                </tr>
+                
+                <tr>
+                	<td>$(this)</td>
+                    <td>Selects the current HTML element</td>
+                </tr>
+                
+                <tr>
+                	<td>$("[href]")</td>
+                    <td>Selects all elements with an href attribute</td>
+                </tr>
+                
+                <tr>
+                	<td>$("a[target='_blank']")</td>
+                    <td>Selects all &lt;a&gt; elements with a target attribute value equal to "_blank"</td>
+                </tr>
+                
+                <tr>
+                	<td>$("a[target!='_blank']")</td>
+                    <td>Selects all &lt;a&gt; elements with a target attribute value NOT equal to "_blank"</td>
+                </tr>
+                
+                <tr>
+                	<td>$(":button")</td>
+                    <td>Selects all &lt;button&gt; elements and &lt;input&gt; elements of type="button"</td>
+                </tr>
+            </table>
+            
+            <hr />
+            
+            <h3>Demo</h3> 
+            <p id="example">This is a paragraph that will hide/show when you click the link below.</p>
+            <a href="#" class="btn btn-md btn-default">Click me to toggle the paragraph</a>
+            <hr />
+            
+            <h3>Code</h3>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#html" aria-controls="html" role="tab" data-toggle="tab">html</a></li>
+                <li role="presentation"><a href="#js" aria-controls="js" role="tab" data-toggle="tab">JS</a></li>
+            </ul>
+            
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="html">
+                	<p><pre class="code prettyprint">&lt;p id="example"&gt;This is a paragraph that will hide/show when you click the link below.&lt;/p&gt;
+&lt;a href="#" class="btn btn-md btn-default"&gt;Click me to toggle the paragraph&lt;/a&gt;</pre></p>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="js">
+                	<p><pre class="code prettyprint">$(document).ready(function(){
+    $("a").click(function(){
+        $("#example").toggle();
+    });
+});</pre></p>
+                </div>
+            </div> 
+            
+        </div>
+    </div>
+    
+</div>
+</body>
+</html>
+<script src="../dist/js/jquery-3.1.1.js"></script>
+<script src="../dist/js/bootstrap.min.js"></script>
+<script src="../dist/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../dist/js/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script>
+$(document).ready(function(){
+    $("a").click(function(){
+        $("#example").toggle();
+    });
+});
+</script>
